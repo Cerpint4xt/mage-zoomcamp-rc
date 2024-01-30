@@ -10,7 +10,7 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/src/ny-rides-rc-b7c3cd9d81
 bucket_name = 'mage-zoomcamp-rc'
 project_id = 'ny-rides-rc-b7c3cd9d8104'
 
-table_name = "nyc_taxi_data"
+table_name = "nyc_taxi_data_green"
 
 root_path = f'{bucket_name}/{table_name}'
 
@@ -40,5 +40,6 @@ def export_data(data, *args, **kwargs):
         partition_cols=['lpep_pickup_date'],
         filesystem=gcs
     )
+    print("All data send to gcs")
 
 
