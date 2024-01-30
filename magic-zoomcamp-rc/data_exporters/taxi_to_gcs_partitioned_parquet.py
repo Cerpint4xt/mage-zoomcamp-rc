@@ -29,7 +29,7 @@ def export_data(data, *args, **kwargs):
         displayed when inspecting the block run.
     """
     # Specify your data exporting logic here
-    data["tpep_pickup_date"] = data["tpep_pickup_datetime"].dt.date
+    #data["tpep_pickup_date"] = data["tpep_pickup_datetime"].dt.date
     table = pa.Table.from_pandas(data)
 
     gcs = pa.fs.GcsFileSystem()
@@ -37,7 +37,7 @@ def export_data(data, *args, **kwargs):
     pq.write_to_dataset(
         table,
         root_path=root_path,
-        partition_cols=['tpep_pickup_date'],
+        partition_cols=['lpep_pickup_date'],
         filesystem=gcs
     )
 
