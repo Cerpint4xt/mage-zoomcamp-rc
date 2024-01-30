@@ -4,8 +4,7 @@ blocks:
   configuration:
     file_source:
       path: data_loaders/load_api_data.py
-  downstream_blocks:
-  - clean_taxi_data
+  downstream_blocks: []
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -25,14 +24,13 @@ blocks:
   executor_type: local_python
   has_callback: false
   language: python
-  name: clean_taxi_data
+  name: clean_taxi_data_with_assert
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: transformer
-  upstream_blocks:
-  - load_api_data
-  uuid: clean_taxi_data
+  upstream_blocks: []
+  uuid: clean_taxi_data_with_assert
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
@@ -54,7 +52,7 @@ settings:
 spark_config: {}
 tags: []
 type: python
-updated_at: '2024-01-30 19:21:45'
+updated_at: '2024-01-30 19:26:32'
 uuid: green_taxi_etl
 variables_dir: /home/src/mage_data/magic-zoomcamp-rc
 widgets: []
